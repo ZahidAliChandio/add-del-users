@@ -1,0 +1,21 @@
+#form-container{
+    display: flex;
+    flex-direction: column;
+    padding-top: 3%;
+}
+#user-form{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 1em;
+    width: 30%;
+    align-items: center;
+}
+#user-form input{
+    font-size:medium;
+    padding:0.2rem 0.5rem;
+    width: 100%;
+    height: 2rem;
+    border: 2px solid rgb(164, 164, 164);
+    outline: none;
+}

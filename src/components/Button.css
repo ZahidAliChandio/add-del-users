@@ -1,0 +1,11 @@
+button{
+    display: block;
+    font-size:small;
+    padding: 0.6rem 0.8rem;
+    align-self: flex-end;
+    float: right;
+    cursor: pointer;
+    border: 1px solid gainsboro;
+    border-radius: 0.3rem;
+    outline: none;
+}

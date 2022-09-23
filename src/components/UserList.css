@@ -1,0 +1,22 @@
+#users-outer-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+#users-inner-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    width: 40%;
+}
+#users-inner-container .heading{
+    display: inline-block;
+    margin: 0.2rem 1rem;
+}
+#user-item{
+    display: flex;
+    gap: 2em;
+    align-items: center;
+    font-size:large;
+}

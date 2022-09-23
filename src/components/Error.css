@@ -1,0 +1,8 @@
+#error-container{
+    border: 2px solid red;
+    width: 40%;
+    align-self: center;
+    color: white;
+    background-color: rgba(0,0,0,0.7);
+    box-shadow: 0 0 0 100vmax rgba(0,0,0,0.7);
+}
