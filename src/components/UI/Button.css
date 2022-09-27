@@ -11,3 +11,9 @@ button{
     border-radius: 0.32rem;
     outline: none;
 }
+@media only screen and (max-width:480px){
+    button{
+        font-size: 0.8rem;
+        padding: 0.4rem 0.7rem;
+    }
+}

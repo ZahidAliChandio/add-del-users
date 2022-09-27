@@ -4,9 +4,10 @@
     text-align: center;
     height: 100vh;
 }
-.heading{
-    font-size:1.5rem;
-    margin-top:2.5rem;
+
+.heading {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
     display: inline-block;
     color: blue;
 }
@@ -16,7 +17,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0 0.5em;
+    padding: 0 0.7em;
     gap: 2em;
     position: absolute;
     top: 50%;
@@ -38,39 +39,74 @@
     border-bottom: 1px solid red;
 }
 
+.resetContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
 
+.resetPassword {
+    font-size: small;
+    color: blue;
+    font-weight:500;
+    text-decoration: none;
+}
+.hrContainer{
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    width: 100%;
+}
+.newUser{
+    font-size:medium;
+    padding: 0.3em 0.6em;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    border: none;
+    background-color:  rgb(157, 0, 255);
+    border-radius: 0.2em;
+}
 @media only screen and (min-width:480px) {
-    .heading{
+    .heading {
         font-size: 2rem;
         margin-top: 1.5rem;
     }
+
     #userForm {
         padding: 0 2em;
         width: 80%;
     }
-    .control{
-        width: 80%;
+    .resetPassword {
+        font-size:medium;
     }
 }
+
+
 @media only screen and (min-width:768px) {
-    .heading{
+    .heading {
         font-size: 2.5rem;
     }
+
     #userForm {
         width: 60%;
     }
-    .control{
-        width: 90%;
-    }
 }
+
 @media only screen and (min-width:1024px) {
-    .heading{
+    .heading {
         font-size: 3rem;
     }
+
     #userForm {
         width: 45%;
     }
-    .control{
-        width: 95%;
+}
+
+@media only screen and (min-width:1200px) {
+    .heading {
+        margin-top: 2.5rem;
+        font-size: 3rem;
     }
 }

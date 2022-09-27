@@ -1,9 +1,11 @@
 import React from 'react'
-const UserList = (props) => {
+
+const Manager = () => {
     return (
         <div>
+
         </div>
     )
 }
 
-export default UserList
+export default Manager

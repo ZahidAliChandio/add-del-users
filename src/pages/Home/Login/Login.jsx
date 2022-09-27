@@ -1,6 +1,6 @@
 import React, { useEffect, useReducer, useState } from 'react'
-import Button from '../../../components/Button';
-import Input from '../../../components/Input'
+import Button from '../../../components/UI/Button';
+import Input from '../../../components/UI/Input'
 import classes from './Login.module.css'
 
 function Login() {
@@ -65,7 +65,14 @@ function Login() {
                         onBlur={validatePassword}
                         placeholder='password' />
                 </div>
-                <Button disabled={true}>Login</Button>
+                <div className={classes.resetContainer}>
+                    <a href="/" className={classes.resetPassword}>Forgot your password?</a>
+                    <Button disabled={true}>Login</Button>
+                </div>
+                <div className={classes.hrContainer}>
+                    <span className='hr'></span> <span className='color-grey'> or</span> <span className="hr"></span>
+                </div>
+                <a href="/" className={classes.newUser}>New User</a>
             </form>
         </div>
     )
