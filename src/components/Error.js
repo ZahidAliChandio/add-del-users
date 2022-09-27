@@ -1,19 +1,36 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import Button from './Button'
 import './Error.css'
 
 const Error = (props) => {
     return (
         <div id='error-container' onClick={props.onConfirm}>
-            <head>
-                <h3>{props.title}</h3>
-            </head>
-            <p><h2>{props.message}</h2></p>
+            <header>
+                <h3>{props.title}:</h3>
+            </header>
+            <div>
+                <p>{props.message}</p>
+            </div>
             <footer>
                 <Button onClick={props.onConfirm}>Okay</Button>
             </footer>
         </div>
     )
 }
+const TopError = (props) => {
+    return (
+        <React.Fragment>
+            {
+                ReactDOM.createPortal(
+                    <Error
+                        title={props.title}
+                        message={props.message}
+                        onConfirm={props.onConfirm} />,
+                    document.getElementById('error-overlay'))
+            }
+        </React.Fragment>
+    )
+}
 
-export default Error
+export default TopError

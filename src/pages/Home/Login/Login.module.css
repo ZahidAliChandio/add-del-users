@@ -1,0 +1,59 @@
+#userFormContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+#userForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.5em;
+    gap: 2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 60%;
+    border-radius: 0.3em;
+    box-shadow: 4px 5px 10px 2px rgba(0, 0, 0, 0.2);
+}
+.control{
+    width: 100%;
+}
+.control input:focus {
+    border-bottom: 1px solid rgb(102, 57, 227);
+}
+
+.control.invalid input:focus {
+    border-bottom: 1px solid red;
+}
+
+
+@media only screen and (min-width:480px) {
+    #userForm {
+        padding: 0 2em;
+        width: 80%;
+    }
+    .control{
+        width: 80%;
+    }
+}
+@media only screen and (min-width:768px) {
+    #userForm {
+        width: 60%;
+    }
+    .control{
+        width: 90%;
+    }
+}
+@media only screen and (min-width:1024px) {
+    #userForm {
+        width: 45%;
+    }
+    .control{
+        width: 95%;
+    }
+}
