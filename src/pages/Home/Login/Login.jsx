@@ -50,6 +50,7 @@ function Login() {
     })
     return (
         <div id={classes.userFormContainer}>
+            <h1 className={classes.heading}>Login</h1>
             <form id={classes.userForm}>
                 <div className={`${classes.control} ${email.isValid === false ? classes.invalid : classes.control}`}>
                     <Input value={email.value}

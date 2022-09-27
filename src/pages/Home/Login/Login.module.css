@@ -1,7 +1,14 @@
 #userFormContainer {
     position: relative;
     width: 100%;
+    text-align: center;
     height: 100vh;
+}
+.heading{
+    font-size:1.5rem;
+    margin-top:2.5rem;
+    display: inline-block;
+    color: blue;
 }
 
 #userForm {
@@ -33,6 +40,10 @@
 
 
 @media only screen and (min-width:480px) {
+    .heading{
+        font-size: 2rem;
+        margin-top: 1.5rem;
+    }
     #userForm {
         padding: 0 2em;
         width: 80%;
@@ -42,6 +53,9 @@
     }
 }
 @media only screen and (min-width:768px) {
+    .heading{
+        font-size: 2.5rem;
+    }
     #userForm {
         width: 60%;
     }
@@ -50,6 +64,9 @@
     }
 }
 @media only screen and (min-width:1024px) {
+    .heading{
+        font-size: 3rem;
+    }
     #userForm {
         width: 45%;
     }
