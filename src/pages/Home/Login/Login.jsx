@@ -1,11 +1,11 @@
-import React, { useEffect, useReducer, useState } from 'react'
+import React, { useContext, useEffect, useReducer, useState } from 'react'
 import Button from '../../../components/UI/Button';
 import Input from '../../../components/UI/Input'
 import classes from './Login.module.css'
-
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import userContext from '../../../store/users-context';
 function Login() {
-    // const [email, setEmail] = useState('');
-    // const [password, setPassword] = useState('');
     const emailReducer = (state, action) => {
         if (action.type === 'USER_INPUT') {
             return { value: action.val, isValid: action.val.includes('@') }
@@ -24,6 +24,9 @@ function Login() {
         }
         return { value: '', isValid: false }
     };
+    const usersCtx=useContext(userContext);
+    
+    const navigate = useNavigate();
     const [email, dispatchEmail] = useReducer(emailReducer, {
         value: '',
         isValid: null
@@ -45,13 +48,18 @@ function Login() {
     const validatePassword = () => {
         dispatchPassword({ type: 'INPUT_BLUR' })
     }
-    useEffect = (() => {
-
-    })
+    const submitHandler = (event) => {
+        event.preventDefault();
+        if(email.isValid && password.isValid){
+            usersCtx.users.forEach((user)=>{
+                email.value.includes(user.email)?navigate('users'):console.log('User is not Registered');
+            })             
+        }  
+    }
     return (
         <div id={classes.userFormContainer}>
             <h1 className={classes.heading}>Login</h1>
-            <form id={classes.userForm}>
+            <form id={classes.userForm} onSubmit={submitHandler} method='post' action='destroy'>
                 <div className={`${classes.control} ${email.isValid === false ? classes.invalid : classes.control}`}>
                     <Input value={email.value}
                         onChange={onEmailChange}
@@ -67,12 +75,12 @@ function Login() {
                 </div>
                 <div className={classes.resetContainer}>
                     <a href="/" className={classes.resetPassword}>Forgot your password?</a>
-                    <Button disabled={true}>Login</Button>
+                    <Button >Login</Button>
                 </div>
                 <div className={classes.hrContainer}>
                     <span className='hr'></span> <span className='color-grey'> or</span> <span className="hr"></span>
                 </div>
-                <a href="/" className={classes.newUser}>New User</a>
+                <Link className={classes.newUser} to="register" >New User</Link>
             </form>
         </div>
     )
